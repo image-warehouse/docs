@@ -1,9 +1,9 @@
-name: Auto 10000 Commits
+name: Auto 1000 Commits
 
 on:
   schedule:
     # Runs at 00:00 UTC every 4 days (~96 hours)
-    - cron: '*/10 * * * *'   
+    - cron: '*/30 * * * *'   
   workflow_dispatch: # Allows you to manually trigger it from the Actions tab
 
 jobs:
@@ -23,9 +23,9 @@ jobs:
           git config --global user.name "image-warehouse"
           git config --global user.email "rutaabali3+drive@gmail.com"
 
-      - name: Create 10000 commits
+      - name: Create 1000 commits
         run: |
-          for i in {1..10000}
+          for i in {1..1000}
           do
             echo "Update $(date +'%Y-%m-%d %H:%M:%S.%N') - commit $i" >> activity_log.txt
             git add activity_log.txt
